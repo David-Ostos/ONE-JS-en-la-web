@@ -11,5 +11,5 @@ const createTask = (evento)=>{ //para no tener que utilizar la palabra function 
 console.log(btn);
 console.log(input.value);// .value es para poder sacar la informacion del objeto en este caso es de la etiqueta input
 
-btn.addEventListener("click",createTask);
+btn.addEventListener("click",createTask);// aqui se declara que hacer cuando el boton se acciona
 
