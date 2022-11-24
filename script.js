@@ -1,4 +1,5 @@
-( () => {
+import checkComplete from "./components/checkComplete.js";
+import deleteAll from "./components/deleteIcon.js";
 
 const btn = document.querySelector("[data-form-btn]"); //con document.querySelector("") se llama un elemento del html 
 
@@ -17,38 +18,10 @@ const createTask = (evento)=>{ //para no tener que utilizar la palabra function 
   titleTask.classList.add("task");
   titleTask.innerText = value;
   taskContent.appendChild(titleTask);
-  /*taskContent.appendChild(deleteAll())*/
-
+ 
     task.appendChild(taskContent)
+    task.appendChild(deleteAll());
     list.appendChild(task); //con appendChild se agrega un hijo a una etiqueta en el html.
-    console.log(taskContent)
 }
-
 // aqui se declara que hacer cuando el boton se acciona
 btn.addEventListener("click",createTask);
-
-const checkComplete = () => {
-  let i = document.createElement("i");
-  i.classList.add("far","fa-check-square","icon");
-  i.addEventListener("click", completeTask);
-  return i;
-
-}
-
-const completeTask = (event) => {
-  const element = event.target;
-  element.classList.toggle("fas");// el toggle es para verificar si tiene o no la clase si la tiene la quita y si no la tiene la coloca 
-  element.classList.toggle("completeIcon")
-  element.classList.toggle("far");
-}
-
-
-/*
-const deleteAll = () => {
-
-  let i = document.createElement("i");
-  i.classList.add("fas","fa-trash-alt","trashIcon","icon");
-  return i;
-  
-}*/
-}) ();
